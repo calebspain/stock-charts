@@ -151,7 +151,7 @@ export default function Dashboard() {
             const result = await axios(`https://sandbox.iexapis.com/stable/stock/aapl/batch?types=quote,chart&range=${time || '5y'}&token=Tsk_481d64f605eb4da3a6deda2007163531`);
             result.data.chart.forEach((obj, i) => {
                 tempData.push(createData(obj.label, obj.close));
-                if (i % 10 === 0) {
+                if (i % 20 === 0) {
                     tempRows.push(createRows(i, obj.label, obj.open, obj.close, obj.low, obj.high));
                 }
             });
